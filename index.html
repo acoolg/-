@@ -1,26 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+</head>
+
+<body>
+    <div class="p">
+        <div id="clock"></div>
+    </div>
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var date = now.toLocaleDateString();
+            var time = now.toLocaleTimeString();
+            document.getElementById('clock').innerHTML = time + '<br>' + date;
+        }
+
+        setInterval(updateTime, 10)
+    </script>
     <style>
-        body{
-            cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjbQg61aAAAADUlEQVQYV2P4//8/IwAI/QL/+TZZdwAAAABJRU5ErkJggg=='),
-            url(images/blank.cur),
-            none !important;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            background-image: url(kkk.png);
-            background-attachment: fixed;
+        body {
+            text-align: center;
+            /* 文字居中对齐 */
+            padding: 30px;
+            /* 页面边距 */
+            background-color: black;
+            /* 背景颜色为黑色 */
+            background-image: url(koding.png);
+            /* 背景图片 */
             background-position: center;
-            background-size: cover;
+            /* 背景图片位置居中 */
+            background-attachment: fixed;
+            /* 背景图片固定不滚动 */
+            background-size: 100%;
+            /* 背景图片大小为100% */
+            background-repeat: no-repeat;
+        }
+
+        /* 设置图片的宽度为屏幕一半宽度 */
+        img {
+            max-width: 50%;
+        }
+
+        /* 设置文字的颜色为淡黑色 */
+        .p {
+            color: black;
+            border-radius: 10px;
+            /* 边框圆角半径为10px */
+            background-color: azure;
+            /* 背景颜色为azure */
+            box-shadow: 5px 5px 10px azure;
+            /* 添加阴影效果 */
+            max-width: 50%;
+            /* 最大宽度为50% */
+            margin: 0 auto;
+            /* 水平居中对齐 */
+        }
+
+        /* 设置时钟的样式 */
+        #clock {
+            font-size: 48px;
+            /* 字体大小为48px */
+            text-align: center;
+            /* 文字居中对齐 */
+            margin-top: 100px;
+            /* 顶部外边距为100px */
+        }
+
+        /* 设置按钮的样式 */
+        .btn {
+            position: relative;
+            /* 相对定位 */
+            top: 50px;
+            /* 顶部偏移50px */
+            bottom: 10px;
+            /* 底部偏移10px */
+            width: 50%;
+            /* 宽度为150px */
+            height: 50px;
+            /* 高度为50px */
         }
     </style>
-</head>
-<body>
-
 </body>
+
 </html>
